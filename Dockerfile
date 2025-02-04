@@ -16,6 +16,8 @@ COPY --from=builder /app/main .
 
 RUN chmod +x ./main
 
-EXPOSE 8080
+ARG APP_PORT=8080
 
+ENV APP_PORT=${APP_PORT}
+EXPOSE ${APP_PORT}
 ENTRYPOINT ["./main"]

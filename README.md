@@ -15,24 +15,34 @@ A simple RESTful service for user onboarding built with **Golang**, **MySQL**, a
 
 ### **Run the Application with Docker**  
 
-1. **Clone the Repository**:
+- **Clone the Repository**:
    ```bash
    git clone https://github.com/your-repo/user-onboard-service.git
    cd user-onboard-service
    ```
+---
 
-2. **Build and Start Services**:
+### **To run the application using docker**
+1. **Build and Start Services**:
    ```bash
    docker-compose up --build
    ```
 
-3. **Access the Service**:  
+2. **Access the Service**:  
    The service will be available at `http://localhost:8080`.
 
-4. **Stopping the Services**:
+3. **Stopping the Services**:
    ```bash
    docker-compose down
    ```
+---
+
+### **To run the application using docker but on a specific port**
+-  **Run the shell using the following command**:
+   ```bash
+    ./run-app.sh {port}
+   ```
+-  **The service will be available on the provided port.**
 
 ---
 
@@ -52,7 +62,7 @@ A simple RESTful service for user onboarding built with **Golang**, **MySQL**, a
 **cURL Command**:
 ```bash
 curl -X \
- POST http://localhost:8080/api/users   -u admin:password   -H \
+ POST http://localhost:{port}/api/users   -u admin:password   -H \
  "Content-Type: application/json"   -d '{
     "id": "1",
     "name": "John Doe",
@@ -69,7 +79,7 @@ curl -X \
 **cURL Command**:
 ```bash
 curl -X \
- GET http://localhost:8080/api/users/1   -u admin:password
+ GET http://localhost:{port}/api/users/1   -u admin:password
 ```
 
 ---
@@ -80,7 +90,7 @@ curl -X \
 **cURL Command**:
 ```bash
 curl -X \
- GET http://localhost:8080/api/users   -u admin:password
+ GET http://localhost:{port}/api/users   -u admin:password
 ```
 
 ---
