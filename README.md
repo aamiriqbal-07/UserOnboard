@@ -1,7 +1,3 @@
-Here's a fresh **README.md** for your project:
-
----
-
 # **User Onboarding Service**
 
 A simple RESTful service for user onboarding built with **Golang**, **MySQL**, and containerized using **Docker**. This service supports basic CRUD operations for managing users.
@@ -55,9 +51,13 @@ A simple RESTful service for user onboarding built with **Golang**, **MySQL**, a
 
 **cURL Command**:
 ```bash
-curl -X POST http://localhost:8080/api/users \
-  -H "Content-Type: application/json" \
-  -d '{"id":"1","name":"John Doe","signupTime":1627683600000}'
+curl -X \
+ POST http://localhost:8080/api/users   -u admin:password   -H \
+ "Content-Type: application/json"   -d '{
+    "id": "1",
+    "name": "John Doe",
+    "signupTime": 1700000000000
+  }'
 ```
 
 ---
@@ -68,7 +68,8 @@ curl -X POST http://localhost:8080/api/users \
 
 **cURL Command**:
 ```bash
-curl -X GET http://localhost:8080/api/users/1
+curl -X \
+ GET http://localhost:8080/api/users/1   -u admin:password
 ```
 
 ---
@@ -78,7 +79,8 @@ curl -X GET http://localhost:8080/api/users/1
 
 **cURL Command**:
 ```bash
-curl -X GET http://localhost:8080/api/users
+curl -X \
+ GET http://localhost:8080/api/users   -u admin:password
 ```
 
 ---
